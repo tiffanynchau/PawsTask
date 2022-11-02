@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from "react";
-import apiClient from "./apiClient.js";
+import React, { useState } from "react";
+import "./components/App.css";
+//Importing components
+import Form from "./components/Form.js";
+import TodoList from "./components/TodoList.js";
 
 function App() {
   //array destructuring for current todos state and updated todos state
   //Todos will store all user's input todos
   //Todo is single task user create
+  const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [todo, setTodo] = useState("");
-
-  useEffect(() => {
-    const getAllTodos = async () => {
-      const todos = await apiClient.getAllTodos();
-      setTodos(todos);
-    };
-    getAllTodos();
-  }, []);
 
   return (
     <div className="App">
-      <div>
-        <input
-          id="todo-input"
-          type="text"
-          value={todo}
-          onChange={({ target }) => setTodo(target.value)}
+      <div className="header">
+        <h3>
+          <strong>Hi...</strong>
+        </h3>
+        <p>What's up for today?</p>
+      </div>
+
+      <hr></hr>
+      <div className="todolist-containter">
+        <Form
+          todos={todos}
+          setTodos={setTodos}
+          inputText={inputText}
+          setInputText={setInputText}
         />
-        <button type="button" onClick={createTodo}>
-          {" "}
-          Add Task{" "}
-        </button>
+        <TodoList setTodos={setTodos} todos={todos} />
       </div>
     </div>
   );

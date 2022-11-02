@@ -6,7 +6,7 @@ const PORT = 3000;
 /**
  * handle requests for static files
  */
-// app.use("/build", express.static(path.join(__dirname, "../build")));
+app.use("/build", express.static(path.join(__dirname, "../build")));
 
 app.get("/", (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, "../index.html"));
