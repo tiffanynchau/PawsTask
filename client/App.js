@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./components/App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 //Importing components
 import Form from "./components/Form.js";
 import TodoList from "./components/TodoList.js";
@@ -15,15 +17,12 @@ function App() {
   return (
     <div className="App">
       <div className="header">
-        <h3>
-          <strong>Hi...</strong>
-        </h3>
-        <p>What's up for today?</p>
+        <p className="sayHi">What's up for today?</p>
+        <div className="datetime">
+          <DateTime></DateTime>
+        </div>
       </div>
 
-      <div className="datetime">
-        <DateTime></DateTime>
-      </div>
       <div className="todolist-containter">
         <Form
           todos={todos}

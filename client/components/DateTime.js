@@ -12,7 +12,7 @@ const DateTime = () => {
 
   return (
     <div>
-      <p> Today : {date.toLocaleDateString()}</p>
+      <p>{date.toLocaleDateString()}</p>
       <p>{date.toLocaleTimeString()}</p>
     </div>
   );

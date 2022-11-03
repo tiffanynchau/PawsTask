@@ -209,6 +209,30 @@ select {
   cursor: pointer;
   pointer-events: none;
 }
+
+.datetime {
+  color: rgb(61, 60, 60);
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0 0 24px;
+  padding: 0 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sayHi {
+  color: rgb(43, 43, 43);
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 64px;
+  margin: 0 0 0;
+  padding: 20px 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
 /* Transition */
 /*
     .select:hover::after {
@@ -220,10 +244,111 @@ select {
   <button class="button-52" role="button">Button 52</button> */
 
 /* CSS */
+/* .card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
 
-.datetime {
-  font-size: 20px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(#ffffff, 0.1);
+    pointer-events: none;
+  }
+
+  &:nth-child(1) {
+    background-image: linear-gradient(45deg, #3503ad, #f7308c);
+  }
+
+  &:nth-child(2) {
+    background-image: linear-gradient(45deg, #ccff00, #09afff);
+  }
+
+  &:nth-child(3) {
+    background-image: linear-gradient(45deg, #e91e63, #ffeb3b);
+  }
+}  */
+/* 
+.card__frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 20px;
-  font-family: "Optima", sans-serif;
+} */
+
+/* .card__title {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+} */
+
+.card__overlay {
+  position: fixed;
+
+  bottom: 100px;
+  right: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background-color: #f6dcdc;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(#000000, 0.2);
+  transition: 0.5s;
+  cursor: pointer;
+
+  &::before {
+    content: "Read";
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  &:hover,
+  &:focus {
+    /* bottom: 0;
+    right: 0; */
+    width: 25%;
+    height: 25%;
+    box-shadow: none;
+    border-radius: 25px;
+    opacity: 0.9;
+
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.card__content {
+  z-index: 1;
+  padding: 20px;
+  line-height: 1.4;
+  opacity: 0;
+  visibility: hidden;
+  box-sizing: border-box;
+  pointer-events: none;
+  transition: 0s;
+
+  .card__overlay:hover ~ & {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s 0.3s;
+  }
 }

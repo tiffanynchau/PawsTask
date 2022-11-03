@@ -28,8 +28,10 @@ module.exports = {
     port: 8080,
     proxy: {
       "/**": "http://localhost:3000",
+      secure: false,
+      changeOrigin: true,
     },
-    // watchFiles: ["client/**"],
+    watchFiles: ["client/**"],
   },
 
   module: {

@@ -22,7 +22,4 @@ todoController.getAllTodos = (req, res, next) => {
  * createTodo - create and save a new User into the database.
  */
 
-
-
-
 todoController.createTodo = (req, res, err) => {};
