@@ -19,13 +19,8 @@ mongoose
 //creating Schema for todo
 const todoSchema = new mongoose.Schema({
   //creating task
-  user: {
-    type: String,
-    required: true,
-  },
   task: {
     type: String,
-    unique: true,
     required: true,
   },
   //creating completed status
@@ -35,6 +30,4 @@ const todoSchema = new mongoose.Schema({
   },
 });
 
-const todoModel = mongoose.model("Todo", todoSchema);
-
-module.exports = todoModel;
+module.exports = mongoose.model("Todo", todoSchema);

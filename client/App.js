@@ -3,6 +3,7 @@ import "./components/App.css";
 //Importing components
 import Form from "./components/Form.js";
 import TodoList from "./components/TodoList.js";
+import DateTime from "./components/DateTime.js";
 
 function App() {
   //array destructuring for current todos state and updated todos state
@@ -20,7 +21,9 @@ function App() {
         <p>What's up for today?</p>
       </div>
 
-      <hr></hr>
+      <div className="datetime">
+        <DateTime></DateTime>
+      </div>
       <div className="todolist-containter">
         <Form
           todos={todos}

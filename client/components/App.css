@@ -16,9 +16,16 @@ body {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.App {
+  border-radius: 25px;
+}
+
 .header {
   text-align: center;
   padding: 20px;
+  border-radius: 25px 25px 0px 0px;
+  background-color: #fcf761;
+  min-height: 150px;
 }
 
 form {
@@ -34,7 +41,8 @@ form button {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background-color: #dcebeb;
+  background-color: #ebf57c;
+  border: 1px solid #e0e2e2;
 }
 /* form button {
     color: #ff6f47;
@@ -86,11 +94,11 @@ form button {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #f7e2e1;
+  border: 3px solid #bcc5e9;
   border-radius: 15px;
   margin-left: 100px;
   margin-right: 100px;
-  background-color: #f7e2e1;
+  background-color: #bcc5e9;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
@@ -141,7 +149,7 @@ form button {
   border-radius: 15px;
 }
 .complete-btn {
-  background: #ac6869;
+  background: #9c92c4;
   margin-right: 10px;
 }
 .todo-item {
@@ -213,8 +221,9 @@ select {
 
 /* CSS */
 
-.date {
+.datetime {
   font-size: 20px;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
+  font-family: "Optima", sans-serif;
 }
