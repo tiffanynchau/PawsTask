@@ -3,18 +3,22 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
+const appRouter = require("./routes/appRouter.js");
+
 /**
  * handle requests for static files
  */
 app.use("/build", express.static(path.join(__dirname, "../build")));
 
+//app.use("./router", appRouter);
+
 app.get("/", (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, "../index.html"));
 });
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Hello from server" });
-});
+// app.get("/api", (res, req) => {
+//   return res.status(200).send("hello from the other side");
+// });
 
 //Global error handler
 app.use((err, req, res, next) => {

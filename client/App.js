@@ -19,6 +19,11 @@ function App() {
       <div className="header">
         <p className="sayHi">What's up for today?</p>
         <div className="datetime">
+          <img
+            className="sun"
+            src="https://i.pinimg.com/474x/62/bf/35/62bf35bf02b274ce0d7555ed582cb642.jpg"
+          ></img>
+
           <DateTime></DateTime>
         </div>
       </div>
