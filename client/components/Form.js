@@ -1,6 +1,7 @@
 import React from "react";
 
 const Form = ({ setInputText, todos, setTodos, inputText }) => {
+  //write functions to invoke state
   const inputTextHandler = (e) => {
     console.log("e");
     setInputText(e.target.value);

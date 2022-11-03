@@ -12,46 +12,6 @@ app.get("/", (req, res) => {
   return res.status(200).sendFile(path.join(__dirname, "../index.html"));
 });
 
-/*
-app.get("/todos", async (req, res, next) => {
-  try {
-    const todos = await todoModel.find({}).exec();
-    return res.status(200).json(todos);
-  } catch (err) {
-    next({ status: 400, message: "Failed to get todos" });
-  }
-});
-
-app.post("/todos", async (req, res, next) => {
-  try {
-    const todo = await todoModel.create(req.body);
-    return res.status(200).json(todo);
-  } catch (err) {
-    next({ status: 400, message: "Failed to create todo" });
-  }
-});
-
-app.put("/todos/:id", async (req, res, next) => {
-  try {
-    const todo = await todoModel.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
-    return res.status(200).json(todo);
-  } catch (err) {
-    next({ status: 400, message: "Failed to update todo" });
-  }
-});
-
-app.delete("/todos/:id", async (req, res, next) => {
-  try {
-    await todoModel.FindByIdAndRemove(rew.params.id);
-    return res.status(200).send("Deleted!");
-  } catch (err) {
-    next({ status: 400, message: "failed to delete todo" });
-  }
-});
-*/
-
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from server" });
 });

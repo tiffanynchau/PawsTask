@@ -7,8 +7,9 @@ module.exports = {
   entry: "./client/index.js",
 
   output: {
-    path: path.join(__dirname, "build"),
+    path: path.resolve(__dirname, "./build/"),
     filename: "bundle.js",
+    publicPath: "/build",
   },
 
   plugins: [
@@ -19,7 +20,7 @@ module.exports = {
 
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "build"),
+      directory: path.resolve(__dirname, "/client/index.html"),
 
       // publicPath: "/build",
     },
@@ -28,35 +29,30 @@ module.exports = {
     proxy: {
       "/**": "http://localhost:3000",
     },
-    watchFiles: ["client/**"],
+    // watchFiles: ["client/**"],
   },
 
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /node_module/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"],
-          },
+        exclude: /node_modules/,
+        loader: "babel-loader",
+
+        options: {
+          presets: ["@babel/preset-env", "@babel/preset-react"],
         },
       },
 
       {
         test: /.(css|scss)$/,
-        exclude: /node_module/,
+        exclude: /node_modules/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
 
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: [
-          {
-            loader: "file-loader",
-          },
-        ],
+        use: ["file-loader"],
       },
     ],
   },
