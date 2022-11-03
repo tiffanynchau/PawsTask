@@ -492,7 +492,18 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #fcf761;
+  background-color: #ffffff;
   color: rgb(8, 8, 8);
   text-align: center;
+  display: inline-block;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  display: inline;
+}
+
+.cpr {
+  display: inline-block;
 }
